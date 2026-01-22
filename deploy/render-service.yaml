@@ -1,0 +1,46 @@
+# Render Blueprint for EcoQuest Backend
+# Deploy via: render.yaml in repo root or manual service creation
+
+services:
+  - type: web
+    name: ecoquest-backend
+    env: docker
+    region: oregon # or your preferred region
+    plan: starter # or free, standard, pro
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: MONGO_URI
+        sync: false # Set in Render dashboard or via API
+      - key: REDIS_URL
+        sync: false
+      - key: CLOUDINARY_URL
+        sync: false
+      - key: FIREBASE_PROJECT_ID
+        sync: false
+      - key: FIREBASE_CLIENT_EMAIL
+        sync: false
+      - key: FIREBASE_PRIVATE_KEY
+        sync: false
+      - key: FRONTEND_URL
+        value: https://ecoquest-frontend.vercel.app # Update with your Vercel URL
+
+# Optional: Add managed databases
+# databases:
+#   - name: ecoquest-mongo
+#     databaseName: ecoquest
+#     plan: starter
+#     
+#   - name: ecoquest-redis
+#     plan: starter
+
+# Note: 
+# 1. Create service via Render dashboard or `render-cli`
+# 2. Add environment variables as secrets
+# 3. Connect GitHub repo for auto-deploys
+# 4. Use Docker image from registry: ghcr.io/<your-username>/ecoquest-backend:latest

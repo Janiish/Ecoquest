@@ -1,0 +1,143 @@
+/**
+ * Mock Data for Development
+ */
+
+import { Quest, Badge, User } from '../types';
+
+export const mockQuests: Quest[] = [
+  {
+    id: '1',
+    title: 'Plant a Tree',
+    description: 'Plant a tree in your community',
+    xp: 50,
+    difficulty: 'easy',
+    category: 'nature',
+    completed: false,
+    createdAt: new Date('2024-01-20'),
+    updatedAt: new Date('2024-01-20'),
+  },
+  {
+    id: '2',
+    title: 'Reduce Plastic',
+    description: 'Use a reusable bag for shopping',
+    xp: 30,
+    difficulty: 'easy',
+    category: 'lifestyle',
+    completed: true,
+    createdAt: new Date('2024-01-15'),
+    updatedAt: new Date('2024-01-18'),
+  },
+  {
+    id: '3',
+    title: 'Water Conservation',
+    description: 'Take a shower under 5 minutes',
+    xp: 25,
+    difficulty: 'medium',
+    category: 'water',
+    completed: false,
+    createdAt: new Date('2024-01-19'),
+    updatedAt: new Date('2024-01-19'),
+  },
+  {
+    id: '4',
+    title: 'Community Cleanup',
+    description: 'Clean up your local park or beach',
+    xp: 100,
+    difficulty: 'hard',
+    category: 'community',
+    completed: false,
+    createdAt: new Date('2024-01-18'),
+    updatedAt: new Date('2024-01-18'),
+  },
+  {
+    id: '5',
+    title: 'Energy Saver',
+    description: 'Turn off lights for a full day',
+    xp: 20,
+    difficulty: 'easy',
+    category: 'energy',
+    completed: false,
+    createdAt: new Date('2024-01-17'),
+    updatedAt: new Date('2024-01-17'),
+  },
+];
+
+export const mockBadges: Badge[] = [
+  {
+    id: '1',
+    name: 'First Step',
+    tier: 'bronze',
+    iconUrl: '🌱',
+    unlockedAt: '2024-01-15',
+  },
+  {
+    id: '2',
+    name: 'Tree Friend',
+    tier: 'silver',
+    iconUrl: '🌳',
+  },
+  {
+    id: '3',
+    name: 'Eco Champion',
+    tier: 'gold',
+    iconUrl: '♻️',
+  },
+];
+
+export const mockUsers: User[] = [
+  {
+    id: '1',
+    username: 'EcoWarrior92',
+    email: 'warrior@ecoquest.com',
+    totalXp: 1250,
+    level: 12,
+    streak: 5,
+    avatar: '👨',
+    city: 'San Francisco',
+    badges: mockBadges.slice(0, 2),
+  },
+  {
+    id: '2',
+    username: 'GreenMachine',
+    email: 'green@ecoquest.com',
+    totalXp: 980,
+    level: 10,
+    streak: 3,
+    avatar: '👩',
+    city: 'Seattle',
+    badges: mockBadges.slice(0, 1),
+  },
+  {
+    id: '3',
+    username: 'NatureLover',
+    email: 'nature@ecoquest.com',
+    totalXp: 850,
+    level: 9,
+    streak: 2,
+    avatar: '🧑',
+    city: 'Portland',
+    badges: [],
+  },
+  {
+    id: '4',
+    username: 'FutureLeader',
+    email: 'future@ecoquest.com',
+    totalXp: 720,
+    level: 8,
+    streak: 1,
+    avatar: '👨',
+    city: 'Denver',
+    badges: [],
+  },
+  {
+    id: '5',
+    username: 'ClimateHero',
+    email: 'climate@ecoquest.com',
+    totalXp: 650,
+    level: 7,
+    streak: 0,
+    avatar: '👩',
+    city: 'Austin',
+    badges: [],
+  },
+];
