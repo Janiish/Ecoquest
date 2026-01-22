@@ -43,7 +43,18 @@ const mockQuests = [
     active: true,
   },
 ];
-const mockProofs = [];
+
+interface MockProof {
+  _id: string;
+  userUid: string;
+  questId: string;
+  mediaUrl: string;
+  caption: string;
+  verified: boolean;
+  createdAt: Date;
+}
+
+const mockProofs: MockProof[] = [];
 const mockLeaderboard = [
   { rank: 1, uid: 'user1', name: 'Alex Green', xp: 450, city: 'San Francisco' },
   { rank: 2, uid: 'user2', name: 'Jordan Eco', xp: 380, city: 'Portland' },
